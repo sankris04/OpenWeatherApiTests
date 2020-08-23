@@ -1,13 +1,6 @@
 import requests
 import pytest
 
-import OpenAuth
-
-
-@pytest.fixture(scope='session')
-def apiauth():
-    apiauth = OpenAuth.ApiAuth()
-    yield apiauth
 
 
 def test_openWeatherAPIAuthResponseTime(apiauth):
