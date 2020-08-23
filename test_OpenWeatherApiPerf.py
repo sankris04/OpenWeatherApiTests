@@ -1,9 +1,6 @@
 import requests
 import pytest
-import json
-import jsonpath
-import OpenAuth
-import requests_futures
+from CommonLibrary import OpenAuth
 
 
 @pytest.fixture(scope='session')
@@ -14,7 +11,6 @@ def apiauth():
 
 def test_openWeatherAPIAuthResponseTime(apiauth):
     # Get the base url
-
     apiurl = apiauth.base_url()
     # Get the appid
     appid = apiauth.appid_key()

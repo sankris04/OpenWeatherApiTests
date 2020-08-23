@@ -7,7 +7,7 @@ class ApiAuth:
     empCount = 0
 
     def __init__(self):
-        self.file = 'appconfig/config.ini'
+        self.file = '../appconfig/config.ini'
 
     def base_url(self):
         config = ConfigParser()
