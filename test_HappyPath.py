@@ -76,5 +76,5 @@ def test_openWeatherAPI_multiMetricUnits(apiauth):
     assert count[0] == 1, 'Country returned count value is 1'
     metricTemp = jsonpath.jsonpath(response_json, 'list[0].main.temp')
     cityName = jsonpath.jsonpath(response_json, 'list[0].name')
-    assert metricTemp[0] < 45, 'City Bangkok ever recodred hottest temp is 40deg c, we are getting the Franhiet and the value retured will be more than 45'
+    assert metricTemp[0] < 45, 'City Bangkok ever recodred hottest temp is 40deg c, we are getting the Celsius and the value retured will be less than 45'
     assert cityName[0] == 'Bangkok', 'City name code is Bangkok'
