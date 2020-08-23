@@ -1,0 +1,109 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest
+using credential 5e1a2194-4082-4996-9a7b-81a9f350e42d
+ > C:/Program Files/Git/bin/git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > C:/Program Files/Git/bin/git.exe config remote.origin.url https://github.com/sankris04/OpenWeatherApiTests.git # timeout=10
+Fetching upstream changes from https://github.com/sankris04/OpenWeatherApiTests.git
+ > C:/Program Files/Git/bin/git.exe --version # timeout=10
+ > git --version # 'git version 2.28.0.windows.1'
+using GIT_ASKPASS to set credentials
+ > C:/Program Files/Git/bin/git.exe fetch --tags --force --progress -- https://github.com/sankris04/OpenWeatherApiTests.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:/Program Files/Git/bin/git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > C:/Program Files/Git/bin/git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision c8dca95c1638d6972f4fe6984655f21e97a9ba15 (refs/remotes/origin/master)
+ > C:/Program Files/Git/bin/git.exe config core.sparsecheckout # timeout=10
+ > C:/Program Files/Git/bin/git.exe checkout -f c8dca95c1638d6972f4fe6984655f21e97a9ba15 # timeout=10
+Commit message: "changes to the testbasic.py"
+ > C:/Program Files/Git/bin/git.exe rev-list --no-walk 42e361b62f0d5d23a626abc93b79182529a0b19b # timeout=10
+[OpenWeatherApiTest] $ cmd /c call C:\Users\vrtadmin\AppData\Local\Temp\jenkins6387776820064586495.bat
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>set Path=C:\Users\vrtadmin\anaconda3\Scripts;C:\Program Files\Java\jdk1.8.0_191/bin;C:\Program Files\Java\jdk1.8.0_191/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Adaptec\maxView Storage Manager\pegasus\bin;C:\Program Files\Adaptec\maxView Storage Manager\;C:\Program Files\Adaptec\maxView Storage Manager\ssl\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\GenICam_v2_3\bin\Win64_x64;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\LogiGear\LicenseServer\binclient;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\LogiGear\TestArchitect\binclient;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\STEMMER IMAGING\Common Vision Blox\;C:\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\node_modules\npm\bin;C:\Users\vrtadmin\AppData\Local\Microsoft\WindowsApps;C:\Users\vrtadmin\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Users\vrtadmin\AppData\Local\Programs\Microsoft VS Code\bin;F:\flutter\bin;C:\Users\vrtadmin\.dotnet\tools;
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>BatchFile/AllLibrary.bat
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>pip install requests
+Requirement already satisfied: requests in c:\users\vrtadmin\anaconda3\lib\site-packages (2.24.0)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\vrtadmin\anaconda3\lib\site-packages (from requests) (2019.11.28)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in c:\users\vrtadmin\anaconda3\lib\site-packages (from requests) (1.25.8)
+Requirement already satisfied: chardet<4,>=3.0.2 in c:\users\vrtadmin\anaconda3\lib\site-packages (from requests) (3.0.4)
+Requirement already satisfied: idna<3,>=2.5 in c:\users\vrtadmin\anaconda3\lib\site-packages (from requests) (2.8)
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>pip install jsonpath
+Requirement already satisfied: jsonpath in c:\users\vrtadmin\anaconda3\lib\site-packages (0.82)
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>pip install pytest
+Requirement already satisfied: pytest in c:\users\vrtadmin\anaconda3\lib\site-packages (5.3.5)
+Requirement already satisfied: py>=1.5.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest) (1.8.1)
+Requirement already satisfied: packaging in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest) (20.1)
+Requirement already satisfied: attrs>=17.4.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest) (19.3.0)
+Requirement already satisfied: more-itertools>=4.0.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest) (8.2.0)
+Requirement already satisfied: pluggy<1.0,>=0.12 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest) (0.13.1)
+Requirement already satisfied: wcwidth in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest) (0.1.8)
+Requirement already satisfied: importlib-metadata>=0.12 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest) (1.5.0)
+Requirement already satisfied: atomicwrites>=1.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest) (1.3.0)
+Requirement already satisfied: colorama in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest) (0.4.3)
+Requirement already satisfied: pyparsing>=2.0.2 in c:\users\vrtadmin\anaconda3\lib\site-packages (from packaging->pytest) (2.4.6)
+Requirement already satisfied: six in c:\users\vrtadmin\anaconda3\lib\site-packages (from packaging->pytest) (1.14.0)
+Requirement already satisfied: zipp>=0.5 in c:\users\vrtadmin\anaconda3\lib\site-packages (from importlib-metadata>=0.12->pytest) (2.2.0)
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>pip install allure-pytest
+Requirement already satisfied: allure-pytest in c:\users\vrtadmin\anaconda3\lib\site-packages (2.8.18)
+Requirement already satisfied: six>=1.9.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from allure-pytest) (1.14.0)
+Requirement already satisfied: pytest>=4.5.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from allure-pytest) (5.3.5)
+Requirement already satisfied: allure-python-commons==2.8.18 in c:\users\vrtadmin\anaconda3\lib\site-packages (from allure-pytest) (2.8.18)
+Requirement already satisfied: py>=1.5.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest>=4.5.0->allure-pytest) (1.8.1)
+Requirement already satisfied: packaging in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest>=4.5.0->allure-pytest) (20.1)
+Requirement already satisfied: attrs>=17.4.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest>=4.5.0->allure-pytest) (19.3.0)
+Requirement already satisfied: more-itertools>=4.0.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest>=4.5.0->allure-pytest) (8.2.0)
+Requirement already satisfied: pluggy<1.0,>=0.12 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest>=4.5.0->allure-pytest) (0.13.1)
+Requirement already satisfied: wcwidth in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest>=4.5.0->allure-pytest) (0.1.8)
+Requirement already satisfied: importlib-metadata>=0.12 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest>=4.5.0->allure-pytest) (1.5.0)
+Requirement already satisfied: atomicwrites>=1.0 in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest>=4.5.0->allure-pytest) (1.3.0)
+Requirement already satisfied: colorama in c:\users\vrtadmin\anaconda3\lib\site-packages (from pytest>=4.5.0->allure-pytest) (0.4.3)
+Requirement already satisfied: pyparsing>=2.0.2 in c:\users\vrtadmin\anaconda3\lib\site-packages (from packaging->pytest>=4.5.0->allure-pytest) (2.4.6)
+Requirement already satisfied: zipp>=0.5 in c:\users\vrtadmin\anaconda3\lib\site-packages (from importlib-metadata>=0.12->pytest>=4.5.0->allure-pytest) (2.2.0)
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>pip install configparser
+Requirement already satisfied: configparser in c:\users\vrtadmin\anaconda3\lib\site-packages (5.0.0)
+[OpenWeatherApiTest] $ cmd /c call C:\Users\vrtadmin\AppData\Local\Temp\jenkins1636614030225345405.bat
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>set Path=C:\Users\vrtadmin\anaconda3\Scripts
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>pytest --alluredir Reports -s -v
+============================= test session starts =============================
+platform win32 -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1 -- C:\Users\vrtadmin\anaconda3\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\vrtadmin\\.jenkins\\workspace\\OpenWeatherApiTest\\.hypothesis\\examples')
+rootdir: C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest, inifile: pytest.ini
+plugins: allure-pytest-2.8.18, hypothesis-5.5.4, arraydiff-0.3, astropy-header-0.1.2, doctestplus-0.5.0, openfiles-0.4.0, remotedata-0.3.2
+collecting ... collected 15 items
+
+test_BasicCheck.py::test_openWeatherAPIAuthResponseTime 0.028452
+PASSED
+AuthTest/test_OpenWeatherAPIAuth.py::test_openWeatherAPIAuthSuccessResponse PASSED
+AuthTest/test_OpenWeatherAPIAuth.py::test_openWatherAPIAuthFailreResponse PASSED
+AuthTest/test_OpenWeatherAPIAuth.py::test_openWatherAPIAuthHeaderResponse PASSED
+HappyPath/test_HappyPath.py::test_openWeatherAPI_CityID PASSED
+HappyPath/test_HappyPath.py::test_openWeatherAPI_multiRequest PASSED
+HappyPath/test_HappyPath.py::test_openWeatherAPI_multiImperialUnits PASSED
+HappyPath/test_HappyPath.py::test_openWeatherAPI_multiMetricUnits PASSED
+NegativeTest/test_NegativeTest.py::test_openWeatherAPIWrongCountryCode PASSED
+NegativeTest/test_NegativeTest.py::test_openWeatherAPIBadRequest_NOTCityID PASSED
+NegativeTest/test_NegativeTest.py::test_openWeatherAPIBadRequest_requestedNOTaCity PASSED
+NegativeTest/test_NegativeTest.py::test_openWeatherAPIBadRequest_wrongGeoData PASSED
+NegativeTest/test_NegativeTest.py::test_openWeatherAPIBadRequest_invalidZipcode PASSED
+PerfTest/test_OpenWeatherApiPerf.py::test_openWeatherAPIAuthResponseTime 0.022918
+PASSED
+PerfTest/test_OpenWeatherApiPerf.py::test_openWeatherAPIAuthPrallelRequest PASSED
+
+============================= 15 passed in 0.82s ==============================
+
+C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest>exit 0
+[OpenWeatherApiTest] $ C:\Users\vrtadmin\Downloads\allure-cli\bin\allure.bat generate C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest\Reports -c -o C:\Users\vrtadmin\.jenkins\workspace\OpenWeatherApiTest\allure-report
+[0;33mWARN: [mNo current version specified. Use `allure switch <version>` to select version of the report.
+Allure report was successfully generated.
+Creating artifact for the build.
+Artifact was added to the build.
+Finished: SUCCESS
