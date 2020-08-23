@@ -2,7 +2,7 @@ import requests
 import pytest
 import json
 import jsonpath
-from CommonLibrary import OpenAuth
+import OpenAuth
 
 
 @pytest.fixture(scope='session')

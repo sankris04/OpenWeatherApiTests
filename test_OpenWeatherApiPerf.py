@@ -1,6 +1,7 @@
 import requests
 import pytest
-from CommonLibrary import OpenAuth
+
+import OpenAuth
 
 
 @pytest.fixture(scope='session')

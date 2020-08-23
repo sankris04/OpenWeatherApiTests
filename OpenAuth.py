@@ -6,8 +6,8 @@ class ApiAuth:
     'Common base class for all API'
     empCount = 0
 
-    def __init__(self):
-        self.file = '../appconfig/config.ini'
+    def __init__(self) -> object:
+        self.file = 'appconfig/config.ini'
 
     def base_url(self):
         config = ConfigParser()
