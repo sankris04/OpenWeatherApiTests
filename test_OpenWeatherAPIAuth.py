@@ -1,5 +1,7 @@
 import requests
 import pytest
+import json
+import jsonpath
 import OpenAuth
 
 
@@ -9,8 +11,7 @@ def apiauth():
     yield apiauth
 
 
-@pytest.mark.Smoke
-@pytest.mark.Regression
+
 def test_openWeatherAPIAuthSuccessResponse(apiauth):
     # Get the base url
 
@@ -22,7 +23,7 @@ def test_openWeatherAPIAuthSuccessResponse(apiauth):
     assert response.status_code == 200, 'Response Code Should be 200'
 
 
-def test_openWatherAPIAuthFailreResponse(apiauth):
+def test_openWatherAPIAuthFailreResponse(apiauth, message=None):
     # Get the base url
     apiurl = apiauth.base_url()
     # Get the invalid appid
@@ -30,7 +31,9 @@ def test_openWatherAPIAuthFailreResponse(apiauth):
     # Validate the Response code 401
     response = requests.request('GET',apiurl+'q=London&'+invalidappid)
     assert response.status_code == 401, 'Response Code Should be 401'
-    print(response.json())
+    response_json = json.loads(response.text)
+    message = jsonpath.jsonpath(response_json, 'message')
+    assert message[0] == 'Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.'
 
 
 
