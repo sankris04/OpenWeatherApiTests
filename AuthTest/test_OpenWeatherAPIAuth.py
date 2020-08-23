@@ -2,11 +2,10 @@ import requests
 import pytest
 import json
 import jsonpath
+from pytest import mark
 
 
-
-
-
+@pytest.mark.smoke
 def test_openWeatherAPIAuthSuccessResponse(apiauth):
     # Get the base url
 
@@ -18,6 +17,7 @@ def test_openWeatherAPIAuthSuccessResponse(apiauth):
     assert response.status_code == 200, 'Response Code Should be 200'
 
 
+@pytest.mark.smoke
 def test_openWatherAPIAuthFailreResponse(apiauth, message=None):
     # Get the base url
     apiurl = apiauth.base_url()
@@ -31,6 +31,7 @@ def test_openWatherAPIAuthFailreResponse(apiauth, message=None):
     assert message[0] == 'Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.'
 
 
+@pytest.mark.regression
 def test_openWatherAPIAuthHeaderResponse(apiauth):
     # Get the base url
     apiurl = apiauth.base_url()

@@ -1,8 +1,6 @@
 import requests
-import pytest
 import json
 import jsonpath
-import OpenAuth
 
 
 #@pytest.fixture(scope='session')

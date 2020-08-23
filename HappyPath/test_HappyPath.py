@@ -4,8 +4,6 @@ import json
 import jsonpath
 
 
-
-
 def test_openWeatherAPI_CityID(apiauth):
     # Get the base url
     apiurl = apiauth.base_url()
@@ -26,11 +24,12 @@ def test_openWeatherAPI_CityID(apiauth):
 
 def test_openWeatherAPI_multiRequest(apiauth):
     # Get the base url
-    #apiurl = apiauth.base_url()
+    # apiurl = apiauth.base_url()
     # Get the appid
     appid = apiauth.appid_key()
     # Validate Response count
-    response = requests.request('GET', 'http://api.openweathermap.org/data/2.5/group?' + 'id=524901,703448,2643743&units=metric&' + appid)
+    response = requests.request('GET',
+                                'http://api.openweathermap.org/data/2.5/group?' + 'id=524901,703448,2643743&units=metric&' + appid)
     assert response.status_code == 200, 'Requested content(Cities) found'
     response_json = json.loads(response.text)
     count = jsonpath.jsonpath(response_json, 'cnt')
@@ -43,33 +42,37 @@ def test_openWeatherAPI_multiRequest(apiauth):
 
 def test_openWeatherAPI_multiImperialUnits(apiauth):
     # Get the base url
-    #apiurl = apiauth.base_url()
+    # apiurl = apiauth.base_url()
     # Get the appid
     appid = apiauth.appid_key()
     # Validate Response metric untis
-    response = requests.request('GET', 'http://api.openweathermap.org/data/2.5/group?' + 'id=1609350&units=imperial&' + appid)
+    response = requests.request('GET',
+                                'http://api.openweathermap.org/data/2.5/group?' + 'id=1609350&units=imperial&' + appid)
     assert response.status_code == 200, 'Requested content(Cities) found'
     response_json = json.loads(response.text)
     count = jsonpath.jsonpath(response_json, 'cnt')
     assert count[0] == 1, 'Country returned count value is 1'
     metricTemp = jsonpath.jsonpath(response_json, 'list[0].main.temp')
     cityName = jsonpath.jsonpath(response_json, 'list[0].name')
-    assert metricTemp[0] > 45, 'City Bangkok ever recodred hottest temp is 40deg c, we are getting the Franhiet and the value retured will be more than 45'
+    assert metricTemp[
+               0] > 45, 'City Bangkok ever recodred hottest temp is 40deg c, we are getting the Franhiet and the value retured will be more than 45'
     assert cityName[0] == 'Bangkok', 'City name code is Bangkok'
 
 
 def test_openWeatherAPI_multiMetricUnits(apiauth):
     # Get the base url
-    #apiurl = apiauth.base_url()
+    # apiurl = apiauth.base_url()
     # Get the appid
     appid = apiauth.appid_key()
     # Validate Response metric untis
-    response = requests.request('GET', 'http://api.openweathermap.org/data/2.5/group?' + 'id=1609350&units=metric&' + appid)
+    response = requests.request('GET',
+                                'http://api.openweathermap.org/data/2.5/group?' + 'id=1609350&units=metric&' + appid)
     assert response.status_code == 200, 'Requested content(Cities) found'
     response_json = json.loads(response.text)
     count = jsonpath.jsonpath(response_json, 'cnt')
     assert count[0] == 1, 'Country returned count value is 1'
     metricTemp = jsonpath.jsonpath(response_json, 'list[0].main.temp')
     cityName = jsonpath.jsonpath(response_json, 'list[0].name')
-    assert metricTemp[0] < 45, 'City Bangkok ever recodred hottest temp is 40deg c, we are getting the Celsius and the value retured will be less than 45'
+    assert metricTemp[
+               0] < 45, 'City Bangkok ever recodred hottest temp is 40deg c, we are getting the Celsius and the value retured will be less than 45'
     assert cityName[0] == 'Bangkok', 'City name code is Bangkok'
